@@ -586,3 +586,236 @@ height:260px;
 }
 
 }
+
+
+/* ============================= */
+/* LUXURY SUSHI POPUP */
+/* ============================= */
+
+.luxury-popup-overlay{
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: all 0.6s ease;
+}
+
+.luxury-popup-background{
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.85)),
+        url('assets/img-9686-1-jpeg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px) brightness(0.5);
+    transform: scale(1.1);
+    animation: cinematicZoom 14s ease-in-out infinite alternate;
+}
+
+@keyframes cinematicZoom{
+    from{
+        transform: scale(1.08);
+    }
+    to{
+        transform: scale(1.18);
+    }
+}
+
+.luxury-popup-card{
+    position: relative;
+    width: 90%;
+    max-width: 760px;
+    padding: 55px;
+    border-radius: 30px;
+    background: rgba(15,15,15,0.45);
+    border: 1px solid rgba(212,175,55,0.45);
+    box-shadow:
+        0 0 40px rgba(212,175,55,0.15),
+        0 0 100px rgba(0,0,0,0.6);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    overflow: hidden;
+    animation: popupEntrance 1s ease;
+}
+
+@keyframes popupEntrance{
+    from{
+        opacity: 0;
+        transform: translateY(40px) scale(0.92);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.luxury-popup-card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(212,175,55,0.9), rgba(255,255,255,0.08));
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.luxury-popup-content{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.luxury-badge{
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(212,175,55,0.5);
+    color: #d4af37;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.luxury-popup-content h1{
+    font-size: 72px;
+    line-height: 1;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-shadow: 0 0 25px rgba(212,175,55,0.35);
+}
+
+.luxury-subtitle{
+    font-size: 24px;
+    color: #d4af37;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.luxury-description{
+    color: rgba(255,255,255,0.85);
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.luxury-popup-btn{
+    display: inline-block;
+    padding: 18px 42px;
+    border-radius: 60px;
+    text-decoration: none;
+    background: linear-gradient(135deg,#d4af37,#f6e27a);
+    color: #111;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 25px rgba(212,175,55,0.35);
+}
+
+.luxury-popup-btn:hover{
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 0 40px rgba(212,175,55,0.65);
+}
+
+.popup-timer{
+    margin-top: 22px;
+    color: rgba(255,255,255,0.55);
+    font-size: 14px;
+}
+
+.luxury-close-btn{
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(212,175,55,0.5);
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+
+.luxury-close-btn:hover{
+    transform: rotate(90deg);
+    background: rgba(212,175,55,0.2);
+}
+
+.floating-particles{
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.floating-particles span{
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(212,175,55,0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(212,175,55,0.8);
+    animation: floatParticle 10s linear infinite;
+}
+
+.floating-particles span:nth-child(1){ left:10%; top:90%; animation-delay:0s; }
+.floating-particles span:nth-child(2){ left:20%; top:95%; animation-delay:1s; }
+.floating-particles span:nth-child(3){ left:35%; top:92%; animation-delay:2s; }
+.floating-particles span:nth-child(4){ left:50%; top:97%; animation-delay:3s; }
+.floating-particles span:nth-child(5){ left:65%; top:94%; animation-delay:4s; }
+.floating-particles span:nth-child(6){ left:75%; top:98%; animation-delay:5s; }
+.floating-particles span:nth-child(7){ left:85%; top:96%; animation-delay:6s; }
+.floating-particles span:nth-child(8){ left:45%; top:99%; animation-delay:7s; }
+.floating-particles span:nth-child(9){ left:58%; top:93%; animation-delay:8s; }
+.floating-particles span:nth-child(10){ left:92%; top:95%; animation-delay:9s; }
+
+@keyframes floatParticle{
+    0%{
+        transform: translateY(0px) scale(0.8);
+        opacity: 0;
+    }
+    15%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-110vh) scale(1.6);
+        opacity: 0;
+    }
+}
+
+@media(max-width:768px){
+    .luxury-popup-card{
+        padding: 35px 24px;
+    }
+
+    .luxury-popup-content h1{
+        font-size: 42px;
+    }
+
+    .luxury-subtitle{
+        font-size: 18px;
+    }
+
+    .luxury-description{
+        font-size: 15px;
+    }
+
+    .luxury-popup-btn{
+        padding: 15px 28px;
+        font-size: 14px;
+    }
+}

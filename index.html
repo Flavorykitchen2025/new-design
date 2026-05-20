@@ -11,6 +11,44 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
 </head>
 <body>
+
+<!-- Luxury Sushi Popup -->
+<div id="luxuryPopup" class="luxury-popup-overlay">
+    <div class="luxury-popup-background"></div>
+
+    <div class="floating-particles">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="luxury-popup-card">
+        <button class="luxury-close-btn" onclick="closeLuxuryPopup()">×</button>
+
+        <div class="luxury-popup-content">
+            <div class="luxury-badge">PREMIUM SPECIAL</div>
+
+            <h1>SUSHI DAYS 🍣</h1>
+
+            <p class="luxury-subtitle">
+                Fresh Sushi Available Every Wednesday & Friday
+            </p>
+
+            <p class="luxury-description">
+                Limited quantities available.<br>
+                Don’t forget to pre-order early on WhatsApp.
+            </p>
+
+            <a href="https://wa.me/96170305029" target="_blank" class="luxury-popup-btn">
+                PRE-ORDER NOW
+            </a>
+
+            <div class="popup-timer">
+                This message will close automatically in 7 seconds
+            </div>
+        </div>
+    </div>
+</div>
+
 <header class="hero">
 <nav class="navbar">
 <div class="logo-box">
@@ -340,5 +378,24 @@
 <footer>
 <p>© 2026 Flavory Kitchen &amp; Events — Premium Catering Agency</p>
 </footer>
+
+<script>
+function closeLuxuryPopup() {
+    const popup = document.getElementById("luxuryPopup");
+    popup.style.opacity = "0";
+    popup.style.visibility = "hidden";
+
+    setTimeout(() => {
+        popup.style.display = "none";
+    }, 600);
+}
+
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        closeLuxuryPopup();
+    }, 7000);
+});
+</script>
+
 </body>
 </html>
